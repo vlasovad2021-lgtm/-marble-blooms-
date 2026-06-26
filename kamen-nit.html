@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Камень & Нить — изделия ручной работы</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Georgia, serif; background: #faf7f2; }
+
+    /* NAV */
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: #3d2e1e; }
+    .nav-logo { font-family: Georgia, serif; font-size: 18px; font-weight: 500; color: #e8d9c0; letter-spacing: 0.03em; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: #c4a87a; text-decoration: none; }
+    .nav-links a:hover { color: #e8d9c0; }
+
+    /* HERO */
+    .hero { background: #2a1f12; padding: 56px 32px 48px; text-align: center; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.12em; color: #9e7a4a; text-transform: uppercase; margin-bottom: 14px; }
+    .hero-title { font-family: Georgia, serif; font-size: 36px; font-weight: 400; color: #e8d9c0; line-height: 1.2; margin-bottom: 12px; }
+    .hero-sub { font-size: 14px; color: #a08060; line-height: 1.6; max-width: 380px; margin: 0 auto 28px; }
+    .hero-btn { display: inline-block; padding: 10px 24px; border: 1px solid #9e7a4a; border-radius: 4px; color: #e8d9c0; font-size: 13px; cursor: pointer; background: transparent; text-decoration: none; }
+    .hero-btn:hover { background: #3d2e1e; }
+
+    /* DIVIDER */
+    .divider { height: 3px; background: linear-gradient(90deg, #2a1f12, #9e7a4a 50%, #2a1f12); }
+
+    /* ABOUT */
+    .about { display: flex; gap: 24px; padding: 32px 24px; background: #f5f0e8; align-items: center; max-width: 800px; margin: 0 auto; }
+    .about-img { width: 80px; height: 80px; border-radius: 50%; background: #c4a87a; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; }
+    .about-text h3 { font-family: Georgia, serif; font-size: 18px; color: #3d2e1e; margin-bottom: 6px; font-weight: 400; }
+    .about-text p { font-size: 13px; color: #6b5535; line-height: 1.6; }
+
+    /* CATALOGUE */
+    .catalogue { padding: 32px 24px; max-width: 800px; margin: 0 auto; }
+    .section-title { font-family: Georgia, serif; font-size: 20px; color: #3d2e1e; margin-bottom: 6px; font-weight: 400; }
+    .section-sub { font-size: 12px; color: #9e7a4a; margin-bottom: 20px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+    .tab { padding: 6px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1px solid #c4a87a; color: #6b5535; background: transparent; }
+    .tab.active { background: #3d2e1e; color: #e8d9c0; border-color: #3d2e1e; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .card { border-radius: 8px; overflow: hidden; border: 0.5px solid #d4c4a8; background: #fff; }
+    .card-img { height: 110px; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+    .card-body { padding: 10px 12px; }
+    .card-name { font-size: 13px; color: #3d2e1e; font-weight: 500; margin-bottom: 2px; }
+    .card-price { font-size: 12px; color: #9e7a4a; }
+    .card-tag { font-size: 10px; color: #8b6940; background: #f0e6d0; padding: 2px 6px; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
+    .vase-bg { background: #e8ddd0; }
+    .bag-bg { background: #dde8d8; }
+
+    /* CONTACT */
+    .contact { background: #3d2e1e; padding: 32px 24px; text-align: center; }
+    .contact h2 { font-family: Georgia, serif; font-size: 20px; color: #e8d9c0; margin-bottom: 6px; font-weight: 400; }
+    .contact p { font-size: 13px; color: #a08060; margin-bottom: 20px; }
+    .contact-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .contact-btn { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 6px; font-size: 13px; cursor: pointer; border: none; font-family: Georgia, serif; text-decoration: none; }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-tg { background: #2AABEE; color: #fff; }
+    .btn-inst { background: #E1306C; color: #fff; }
+
+    /* FOOTER */
+    .footer { background: #2a1f12; padding: 14px 24px; text-align: center; font-size: 11px; color: #6b5535; }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Камень &amp; Нить</div>
+    <div class="nav-links">
+      <a href="#catalogue">Работы</a>
+      <a href="#about">О мастере</a>
+      <a href="#contact">Связаться</a>
+    </div>
+  </nav>
+
+  <div class="divider"></div>
+
+  <section class="hero">
+    <div class="hero-tag">Ручная работа · Натуральные материалы</div>
+    <h1 class="hero-title">Вазы из камня<br>и плетёные сумки</h1>
+    <p class="hero-sub">Каждое изделие создаётся вручную — камень с характером, нить с историей</p>
+    <a href="#catalogue" class="hero-btn">Смотреть работы</a>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-img">🪨</div>
+    <div class="about-text">
+      <!-- ЗАМЕНИТЕ "Артём" на настоящее имя мастера -->
+      <h3>Мастер Артём</h3>
+      <p>Работаю с натуральным камнем и природными волокнами. Каждая ваза — уникальна: два камня не бывают одинаковыми. Сумки плету вручную из натуральных нитей — прочно и красиво.</p>
+    </div>
+  </section>
+
+  <section class="catalogue" id="catalogue">
+    <p class="section-sub">Каталог</p>
+    <h2 class="section-title">Работы мастера</h2>
+    <div class="tabs">
+      <button class="tab active" onclick="filterItems('all', this)">Все</button>
+      <button class="tab" onclick="filterItems('vase', this)">Вазы из камня</button>
+      <button class="tab" onclick="filterItems('bag', this)">Плетёные сумки</button>
+    </div>
+    <div class="grid" id="grid">
+      <!-- ВАЗЫ — замените эмодзи на фото: <img src="фото.jpg" style="width:100%;height:110px;object-fit:cover"> -->
+      <div class="card" data-cat="vase">
+        <div class="card-img vase-bg">🏺</div>
+        <div class="card-body">
+          <div class="card-tag">Камень</div>
+          <div class="card-name">Ваза «Скала»</div>
+          <div class="card-price">от 4 500 ₽</div>
+        </div>
+      </div>
+      <div class="card" data-cat="vase">
+        <div class="card-img vase-bg">🫙</div>
+        <div class="card-body">
+          <div class="card-tag">Камень</div>
+          <div class="card-name">Ваза «Речная»</div>
+          <div class="card-price">от 3 200 ₽</div>
+        </div>
+      </div>
+      <div class="card" data-cat="vase">
+        <div class="card-img vase-bg">🪨</div>
+        <div class="card-body">
+          <div class="card-tag">Камень</div>
+          <div class="card-name">Ваза «Базальт»</div>
+          <div class="card-price">от 6 000 ₽</div>
+        </div>
+      </div>
+      <!-- СУМКИ -->
+      <div class="card" data-cat="bag">
+        <div class="card-img bag-bg">👜</div>
+        <div class="card-body">
+          <div class="card-tag">Плетение</div>
+          <div class="card-name">Сумка «Лес»</div>
+          <div class="card-price">от 2 800 ₽</div>
+        </div>
+      </div>
+      <div class="card" data-cat="bag">
+        <div class="card-img bag-bg">🧺</div>
+        <div class="card-body">
+          <div class="card-tag">Плетение</div>
+          <div class="card-name">Корзина «Земля»</div>
+          <div class="card-price">от 1 900 ₽</div>
+        </div>
+      </div>
+      <div class="card" data-cat="bag">
+        <div class="card-img bag-bg">👝</div>
+        <div class="card-body">
+          <div class="card-tag">Плетение</div>
+          <div class="card-name">Клатч «Камыш»</div>
+          <div class="card-price">от 2 100 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Хотите заказать?</h2>
+    <p>Напишите мастеру — обсудим размер, форму и сроки. Возможен индивидуальный заказ.</p>
+    <div class="contact-btns">
+      <!-- ЗАМЕНИТЕ ссылки на настоящие: https://wa.me/79991234567 -->
+      <a href="https://wa.me/79991234567" class="contact-btn btn-wa" target="_blank">
+        <i class="ti ti-brand-whatsapp"></i> WhatsApp
+      </a>
+      <!-- ЗАМЕНИТЕ на ваш Telegram: https://t.me/username -->
+      <a href="https://t.me/username" class="contact-btn btn-tg" target="_blank">
+        <i class="ti ti-brand-telegram"></i> Telegram
+      </a>
+      <!-- ЗАМЕНИТЕ на ваш Instagram: https://instagram.com/username -->
+      <a href="https://instagram.com/username" class="contact-btn btn-inst" target="_blank">
+        <i class="ti ti-brand-instagram"></i> Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">© 2024 Камень &amp; Нить — изделия ручной работы</footer>
+
+  <script>
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
